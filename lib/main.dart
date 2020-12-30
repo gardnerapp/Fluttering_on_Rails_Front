@@ -1,11 +1,12 @@
 
 import 'dart:io';
-
-import 'package:api_test/components/error.dart';
 import 'package:api_test/components/navigator_button.dart';
 import 'package:api_test/pages/create.dart';
 import 'package:api_test/pages/index.dart';
-import 'package:api_test/pages/show/search_by_id.dart';
+import 'package:api_test/pages/search/search_by_id.dart';
+import 'package:api_test/pages/search/search_by_name.dart';
+import 'package:api_test/pages/search/search_by_price.dart';
+import 'package:api_test/pages/search/search_directory.dart';
 import 'package:api_test/request/crud_services.dart';
 import 'package:api_test/request/routing_helpers.dart';
 import 'package:flutter/cupertino.dart';
@@ -32,7 +33,10 @@ class MyApp extends StatelessWidget {
       routes: {
         '/create': (context) => Create(),
         '/index': (context) => Index(),
-        '/show': (context) => IdSearch(),
+        '/search': (context) => SearchDirectory(),
+        '/search/id': (context) => IdSearch(),
+        '/search/name': (context) => NameSearch(),
+        '/search/price': (context) => PriceSearch(),
       },
       home: Home(),
     );
@@ -71,39 +75,18 @@ class Home extends StatelessWidget {
                           items: items,
                         )));
               } on SocketException catch (e) {
-                // in routing helpers
+                // in routing help
                 pushError(context, e);
               }
             },
             icon: Icons.list,
           ),
           NavigatorTile(
-            title: "Show",
+            title: "Search",
             onPressed: () {
-              Navigator.pushNamed(context, '/show');
+              Navigator.pushNamed(context, '/search');
             },
             icon: Icons.library_books,
-          ),
-          NavigatorTile(
-            title: "Post",
-            onPressed: () {
-              Navigator.pushNamed(context, '/create');
-            },
-            icon: Icons.mail,
-          ),
-          NavigatorTile(
-            title: "Patch",
-            onPressed: () {
-              Navigator.pushNamed(context, '/create');
-            },
-            icon: Icons.update,
-          ),
-          NavigatorTile(
-            title: "Destroy",
-            onPressed: () {
-
-            },
-            icon: Icons.delete_forever,
           ),
         ],
       ),

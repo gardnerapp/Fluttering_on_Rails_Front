@@ -1,4 +1,5 @@
-import 'package:api_test/pages/show/showi_item.dart';
+
+import 'package:api_test/pages/show_item.dart';
 import 'package:flutter/material.dart';
 import 'package:api_test/models/item.dart';
 

@@ -1,10 +1,9 @@
 import 'package:api_test/components/pop_button.dart';
-import 'package:api_test/models/item.dart';
-import 'package:api_test/pages/show/showi_item.dart';
 import 'package:api_test/request/crud_services.dart';
 import 'package:api_test/request/routing_helpers.dart';
 import 'package:api_test/styles/input.dart';
 import 'package:flutter/material.dart';
+import '../show_item.dart';
 
 class IdSearch extends StatefulWidget {
   @override
