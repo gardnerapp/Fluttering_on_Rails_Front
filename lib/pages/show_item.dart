@@ -65,6 +65,8 @@ class ShowItem extends StatelessWidget {
                     "PUT",
                     style: buttonText(),
                   ),
+                  elevation: 16.0,
+                  padding: EdgeInsets.all(10.0),
                   color: Colors.greenAccent,
                   splashColor: Colors.green[200],
                   shape: RoundedRectangleBorder(
@@ -78,6 +80,8 @@ class ShowItem extends StatelessWidget {
                       color: Colors.white70,
                       size: 30.0,
                     ),
+                    elevation: 16.0,
+                    padding: EdgeInsets.all(10.0),
                     label: Text(
                       "PATCH",
                       style: buttonText(),
@@ -94,6 +98,8 @@ class ShowItem extends StatelessWidget {
                         MaterialPageRoute(
                             builder: (context) => Destroy(item: item)));
                   },
+                  elevation: 16.0,
+                  padding: EdgeInsets.all(10.0),
                   icon: Icon(
                     Icons.delete_forever,
                     color: Colors.white,

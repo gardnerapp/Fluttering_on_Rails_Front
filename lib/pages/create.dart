@@ -27,7 +27,7 @@ class _CreateState extends State<Create> {
             child: Form(
                 key: _formKey,
                 child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
                       TextFormField(
@@ -44,7 +44,7 @@ class _CreateState extends State<Create> {
                           return null;
                         },
                       ),
-                      SizedBox(height: 10),
+                      SizedBox(height: 30),
                       TextFormField(
                         decoration: textInputDecoration("Price"),
                         onChanged: (val){
@@ -59,13 +59,23 @@ class _CreateState extends State<Create> {
                           return null;
                         },
                       ),
-                      RaisedButton(onPressed: () async {
+                      SizedBox(height: 30),
+                      RaisedButton.icon(onPressed: () async {
                         if(_formKey.currentState.validate()){
                           await crud.createItem(name, price);
                           Navigator.pushNamed(context, '/');
                         }
                       },
-                        child: Text("Submit"),
+                        elevation: 16.0,
+                        padding: EdgeInsets.all(10.0),
+                        icon: Icon(Icons.open_in_new, color: Colors.white70, size: 30.0,),
+                        label: Text("Submit", style: TextStyle(color: Colors.white, fontSize: 20.0),),
+                        splashColor: Colors.amber,
+                        color: Colors.deepOrange,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(18.0),
+                          side: BorderSide(color: Colors.orange),
+                        ),
                       )
 
                     ]))));

@@ -51,7 +51,7 @@ class CrudServices{
   }
 
   Future<http.Response> destroyItem(Item item) async {
-    String url = baseUrl + "${item.id}";
+    String url = baseUrl + "/${item.id}";
 
     http.Response response = await http.delete(url, headers: headers);
     return response;
