@@ -7,6 +7,7 @@ import 'package:api_test/pages/create.dart';
 import 'package:api_test/pages/index.dart';
 import 'package:api_test/pages/show/search_by_id.dart';
 import 'package:api_test/request/crud_services.dart';
+import 'package:api_test/request/routing_helpers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -70,6 +71,7 @@ class Home extends StatelessWidget {
                           items: items,
                         )));
               } on SocketException catch (e) {
+                // in routing helpers
                 pushError(context, e);
               }
             },
@@ -108,13 +110,6 @@ class Home extends StatelessWidget {
     );
   }
 
-  void pushError(context, e){
-    Navigator.push(context, MaterialPageRoute(
-        builder: (context) => ErrorPage(
-          error: e.toString(),
-        )
-    ));
-  }
 
 }
 

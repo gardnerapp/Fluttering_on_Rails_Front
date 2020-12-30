@@ -61,6 +61,10 @@ class CrudServices{
     String url = baseUrl + "/$id";
     http.Response response = await http.get(url, headers: headers);
     print(response.body);
+    if(response.body.toString().contains("null")){
+      return null;
+    }
+    print(Item.fromMap(jsonDecode(response.body)));
     return Item.fromMap(jsonDecode(response.body));
   }
 

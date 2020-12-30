@@ -6,8 +6,8 @@ import '../destroy.dart';
 
 class ShowItem extends StatelessWidget {
   final Item item;
-//add patch put buttons
-  const ShowItem({Key key, this.item}) : super(key: key);
+
+  const ShowItem  ({Key key, this.item}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
