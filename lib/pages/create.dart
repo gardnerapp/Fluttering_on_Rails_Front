@@ -62,8 +62,18 @@ class _CreateState extends State<Create> {
                       SizedBox(height: 30),
                       RaisedButton.icon(onPressed: () async {
                         if(_formKey.currentState.validate()){
-                          await crud.createItem(name, price);
-                          Navigator.pushNamed(context, '/');
+                          try {
+                            var request = await crud.createItem(name, price);
+                            //item created return home
+                            if (request.statusCode == 200) {
+                              Navigator.pushNamed(context, '/');
+                            }
+                            else{
+                              //TODO push to error page
+                            }
+                          } on Exception catch (e) {
+                            // TODO push to Error Page
+                          }
                         }
                       },
                         elevation: 16.0,

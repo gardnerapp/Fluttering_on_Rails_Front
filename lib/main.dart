@@ -1,6 +1,6 @@
 
 import 'dart:io';
-import 'package:api_test/components/navigator_button.dart';
+import 'package:api_test/components/navigator_tile.dart';
 import 'package:api_test/pages/create.dart';
 import 'package:api_test/pages/index.dart';
 import 'package:api_test/pages/search/search_by_id.dart';

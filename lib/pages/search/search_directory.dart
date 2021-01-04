@@ -1,4 +1,4 @@
-import 'package:api_test/components/navigator_button.dart';
+import 'package:api_test/components/navigator_tile.dart';
 import 'package:flutter/material.dart';
 
 class SearchDirectory extends StatelessWidget {
